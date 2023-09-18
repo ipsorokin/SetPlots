@@ -11,7 +11,6 @@ function Test-ReparsePoint([string]$Path) {
 
 foreach($vol in $VOLUMES) {
   $path = [IO.Path]::Combine($ROOT_FOLDER, $vol.FileSystemLabel)
-
   if ($DIRS.Contains($path)){
     $part = Get-Partition -Volume $vol
     Add-PartitionAccessPath -DiskNumber $part.DiskNumber -PartitionNumber $part.PartitionNumber -AccessPath $path
